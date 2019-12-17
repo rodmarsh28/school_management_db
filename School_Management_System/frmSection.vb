@@ -12,8 +12,10 @@
             sc.grade = txtGrade.Text
             sc.maxLimit = CInt(txtStudLimit.Text)
             sc.status = ""
+            sc.syID = frmMain.lblSy.Text
             sc.insert_update_user()
             MsgBox("Section Saved !", MsgBoxStyle.Information, "System Information")
+            get_section_data()
             clear()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -27,7 +29,7 @@
             sc.get_section_data()
             dgv.Rows.Clear()
             For Each row As DataRow In sc.dtable.Rows
-                dgv.Rows.Add(row(0), row(1), row(2), row(3))
+                dgv.Rows.Add(row(0), row(1), row(2), row(3), row(4))
             Next
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -64,7 +66,7 @@
     End Sub
 
     Private Sub frmSection_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        generate_sectionNo
+        generate_sectionNo()
         get_section_data()
     End Sub
 

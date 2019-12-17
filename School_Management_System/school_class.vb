@@ -94,6 +94,7 @@ Public Class school_class
             .Parameters.AddWithValue("@grade", SqlDbType.VarChar).Value = grade
             .Parameters.AddWithValue("@maxlimit", SqlDbType.VarChar).Value = maxLimit
             .Parameters.AddWithValue("@status", SqlDbType.VarChar).Value = status
+            .Parameters.AddWithValue("@syID", SqlDbType.VarChar).Value = syID
         End With
         cmd.ExecuteNonQuery()
     End Sub
@@ -135,16 +136,31 @@ Public Class school_class
         da.SelectCommand = cmd
         da.Fill(dtable)
     End Sub
-    Public Sub get_student_data()
+    Public Sub get_student_data(ByVal value As String)
         Dim cmd As New SqlCommand("get_student_data", conn)
         checkConn()
         With cmd
             .CommandType = CommandType.StoredProcedure
             .Parameters.AddWithValue("@command", SqlDbType.Int).Value = command
-            .Parameters.AddWithValue("@searchValue", SqlDbType.VarChar).Value = searchValue
+            .Parameters.AddWithValue("@searchValue", SqlDbType.VarChar).Value = value
         End With
         Dim da As New SqlDataAdapter(cmd)
         da.SelectCommand = cmd
         da.Fill(dtable)
     End Sub
+    Public Sub get_teacher_data(ByVal value As String)
+        Dim cmd As New SqlCommand("get_teacher_data", conn)
+        checkConn()
+        With cmd
+            .CommandType = CommandType.StoredProcedure
+            .Parameters.AddWithValue("@command", SqlDbType.Int).Value = command
+            .Parameters.AddWithValue("@searchValue", SqlDbType.VarChar).Value = value
+        End With
+        Dim da As New SqlDataAdapter(cmd)
+        da.SelectCommand = cmd
+        da.Fill(dtable)
+    End Sub
+
+   
+
 End Class

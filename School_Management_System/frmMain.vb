@@ -53,4 +53,16 @@
     Private Sub SwitchSchoolYearToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SwitchSchoolYearToolStripMenuItem.Click
         frmSwitchSY.ShowDialog()
     End Sub
+
+    Private Sub ChargesDiscountsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChargesDiscountsToolStripMenuItem.Click
+        Dim frm As New frmSchoolYearBuild
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub PaymentDueToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PaymentDueToolStripMenuItem.Click
+        Dim frm As New frmSectionBuildup
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class

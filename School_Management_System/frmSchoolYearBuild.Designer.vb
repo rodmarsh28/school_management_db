@@ -27,47 +27,54 @@ Partial Class frmSchoolYearBuild
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dgvSec = New System.Windows.Forms.DataGridView()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.dgvCharges = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvPD = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblCountSec = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.dgvSec = New System.Windows.Forms.DataGridView()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.StatusStrip2 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblCountCharges = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel8 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel9 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.dgvCharges = New System.Windows.Forms.DataGridView()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.StatusStrip3 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblCountPD = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel10 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel11 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.dgvPD = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblTotApp = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel12 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblTotAmount = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel14 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblChargeDesc = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        CType(Me.dgvSec, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
-        CType(Me.dgvCharges, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvPD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.dgvSec, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
         Me.StatusStrip2.SuspendLayout()
+        CType(Me.dgvCharges, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         Me.StatusStrip3.SuspendLayout()
+        CType(Me.dgvPD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnClose
@@ -122,141 +129,6 @@ Partial Class frmSchoolYearBuild
         Me.TabPage1.Text = "Section Include"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.StatusStrip2)
-        Me.TabPage2.Controls.Add(Me.dgvCharges)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(852, 273)
-        Me.TabPage2.TabIndex = 0
-        Me.TabPage2.Text = "Tuition fee / Charges"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'dgvSec
-        '
-        Me.dgvSec.AllowUserToAddRows = False
-        Me.dgvSec.AllowUserToDeleteRows = False
-        Me.dgvSec.AllowUserToResizeRows = False
-        Me.dgvSec.BackgroundColor = System.Drawing.Color.White
-        Me.dgvSec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSec.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column4, Me.Column1, Me.Column2, Me.Column3})
-        Me.dgvSec.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvSec.Location = New System.Drawing.Point(0, 0)
-        Me.dgvSec.Name = "dgvSec"
-        Me.dgvSec.ReadOnly = True
-        Me.dgvSec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvSec.Size = New System.Drawing.Size(852, 273)
-        Me.dgvSec.TabIndex = 3
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Section No."
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Section Name"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 140
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Grade"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Student Count"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.StatusStrip3)
-        Me.TabPage3.Controls.Add(Me.dgvPD)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(852, 273)
-        Me.TabPage3.TabIndex = 1
-        Me.TabPage3.Text = "Payment Due"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'dgvCharges
-        '
-        Me.dgvCharges.AllowUserToAddRows = False
-        Me.dgvCharges.AllowUserToDeleteRows = False
-        Me.dgvCharges.AllowUserToResizeRows = False
-        Me.dgvCharges.BackgroundColor = System.Drawing.Color.White
-        Me.dgvCharges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCharges.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
-        Me.dgvCharges.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvCharges.Location = New System.Drawing.Point(0, 0)
-        Me.dgvCharges.Name = "dgvCharges"
-        Me.dgvCharges.ReadOnly = True
-        Me.dgvCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCharges.Size = New System.Drawing.Size(852, 273)
-        Me.dgvCharges.TabIndex = 4
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "No."
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Particulars"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 220
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'dgvPD
-        '
-        Me.dgvPD.AllowUserToAddRows = False
-        Me.dgvPD.AllowUserToDeleteRows = False
-        Me.dgvPD.AllowUserToResizeRows = False
-        Me.dgvPD.BackgroundColor = System.Drawing.Color.White
-        Me.dgvPD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPD.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.dgvPD.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvPD.Location = New System.Drawing.Point(3, 3)
-        Me.dgvPD.Name = "dgvPD"
-        Me.dgvPD.ReadOnly = True
-        Me.dgvPD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvPD.Size = New System.Drawing.Size(846, 267)
-        Me.dgvPD.TabIndex = 5
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "No."
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Description"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 220
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Due Date"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 140
-        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lblCountSec, Me.ToolStripStatusLabel6, Me.ToolStripStatusLabel7})
@@ -305,6 +177,58 @@ Partial Class frmSchoolYearBuild
         Me.ToolStripStatusLabel7.Padding = New System.Windows.Forms.Padding(0, 0, 25, 0)
         Me.ToolStripStatusLabel7.Size = New System.Drawing.Size(44, 24)
         Me.ToolStripStatusLabel7.Text = "-"
+        '
+        'dgvSec
+        '
+        Me.dgvSec.AllowUserToAddRows = False
+        Me.dgvSec.AllowUserToDeleteRows = False
+        Me.dgvSec.AllowUserToResizeRows = False
+        Me.dgvSec.BackgroundColor = System.Drawing.Color.White
+        Me.dgvSec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSec.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column4, Me.Column1, Me.Column2, Me.Column3})
+        Me.dgvSec.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvSec.Location = New System.Drawing.Point(0, 0)
+        Me.dgvSec.Name = "dgvSec"
+        Me.dgvSec.ReadOnly = True
+        Me.dgvSec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvSec.Size = New System.Drawing.Size(852, 273)
+        Me.dgvSec.TabIndex = 3
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Section No."
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Section Name"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 140
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Grade"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Student Count"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.StatusStrip2)
+        Me.TabPage2.Controls.Add(Me.dgvCharges)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Size = New System.Drawing.Size(852, 273)
+        Me.TabPage2.TabIndex = 0
+        Me.TabPage2.Text = "Tuition fee / Charges"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'StatusStrip2
         '
@@ -355,9 +279,37 @@ Partial Class frmSchoolYearBuild
         Me.ToolStripStatusLabel9.Size = New System.Drawing.Size(44, 24)
         Me.ToolStripStatusLabel9.Text = "-"
         '
+        'dgvCharges
+        '
+        Me.dgvCharges.AllowUserToAddRows = False
+        Me.dgvCharges.AllowUserToDeleteRows = False
+        Me.dgvCharges.AllowUserToResizeRows = False
+        Me.dgvCharges.BackgroundColor = System.Drawing.Color.White
+        Me.dgvCharges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCharges.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Column5})
+        Me.dgvCharges.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvCharges.Location = New System.Drawing.Point(0, 0)
+        Me.dgvCharges.Name = "dgvCharges"
+        Me.dgvCharges.ReadOnly = True
+        Me.dgvCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCharges.Size = New System.Drawing.Size(852, 273)
+        Me.dgvCharges.TabIndex = 4
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.StatusStrip3)
+        Me.TabPage3.Controls.Add(Me.dgvPD)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(852, 273)
+        Me.TabPage3.TabIndex = 1
+        Me.TabPage3.Text = "Payment Due"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
         'StatusStrip3
         '
-        Me.StatusStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel4, Me.lblCountPD, Me.ToolStripStatusLabel10, Me.ToolStripStatusLabel11})
+        Me.StatusStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel14, Me.lblChargeDesc, Me.ToolStripStatusLabel12, Me.lblTotAmount, Me.ToolStripStatusLabel4, Me.lblTotApp, Me.ToolStripStatusLabel3, Me.lblCountPD, Me.ToolStripStatusLabel10, Me.ToolStripStatusLabel11})
         Me.StatusStrip3.Location = New System.Drawing.Point(3, 241)
         Me.StatusStrip3.Name = "StatusStrip3"
         Me.StatusStrip3.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -368,8 +320,8 @@ Partial Class frmSchoolYearBuild
         'ToolStripStatusLabel4
         '
         Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(76, 24)
-        Me.ToolStripStatusLabel4.Text = "No. Count's :"
+        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(103, 24)
+        Me.ToolStripStatusLabel4.Text = "Total Apllied Due :"
         '
         'lblCountPD
         '
@@ -404,6 +356,105 @@ Partial Class frmSchoolYearBuild
         Me.ToolStripStatusLabel11.Size = New System.Drawing.Size(44, 24)
         Me.ToolStripStatusLabel11.Text = "-"
         '
+        'dgvPD
+        '
+        Me.dgvPD.AllowUserToAddRows = False
+        Me.dgvPD.AllowUserToDeleteRows = False
+        Me.dgvPD.AllowUserToResizeRows = False
+        Me.dgvPD.BackgroundColor = System.Drawing.Color.White
+        Me.dgvPD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPD.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
+        Me.dgvPD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvPD.Location = New System.Drawing.Point(3, 3)
+        Me.dgvPD.Name = "dgvPD"
+        Me.dgvPD.ReadOnly = True
+        Me.dgvPD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvPD.Size = New System.Drawing.Size(846, 267)
+        Me.dgvPD.TabIndex = 5
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "No."
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Description"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 220
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Due Date"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 140
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(76, 24)
+        Me.ToolStripStatusLabel3.Text = "No. Count's :"
+        '
+        'lblTotApp
+        '
+        Me.lblTotApp.MergeIndex = 1
+        Me.lblTotApp.Name = "lblTotApp"
+        Me.lblTotApp.Size = New System.Drawing.Size(13, 24)
+        Me.lblTotApp.Text = "0"
+        '
+        'ToolStripStatusLabel12
+        '
+        Me.ToolStripStatusLabel12.Name = "ToolStripStatusLabel12"
+        Me.ToolStripStatusLabel12.Size = New System.Drawing.Size(132, 24)
+        Me.ToolStripStatusLabel12.Text = "Total Amount Charges :"
+        '
+        'lblTotAmount
+        '
+        Me.lblTotAmount.MergeIndex = 1
+        Me.lblTotAmount.Name = "lblTotAmount"
+        Me.lblTotAmount.Size = New System.Drawing.Size(13, 24)
+        Me.lblTotAmount.Text = "0"
+        '
+        'ToolStripStatusLabel14
+        '
+        Me.ToolStripStatusLabel14.Name = "ToolStripStatusLabel14"
+        Me.ToolStripStatusLabel14.Size = New System.Drawing.Size(108, 24)
+        Me.ToolStripStatusLabel14.Text = "Charge Description"
+        '
+        'lblChargeDesc
+        '
+        Me.lblChargeDesc.MergeIndex = 1
+        Me.lblChargeDesc.Name = "lblChargeDesc"
+        Me.lblChargeDesc.Size = New System.Drawing.Size(0, 24)
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "No."
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Particulars"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 220
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Amount"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Due Applied"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
         'frmSchoolYearBuild
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -421,19 +472,19 @@ Partial Class frmSchoolYearBuild
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        CType(Me.dgvSec, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
-        CType(Me.dgvCharges, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvPD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.dgvSec, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.StatusStrip2.ResumeLayout(False)
         Me.StatusStrip2.PerformLayout()
+        CType(Me.dgvCharges, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.StatusStrip3.ResumeLayout(False)
         Me.StatusStrip3.PerformLayout()
+        CType(Me.dgvPD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -452,9 +503,6 @@ Partial Class frmSchoolYearBuild
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents dgvCharges As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents dgvPD As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -472,4 +520,14 @@ Partial Class frmSchoolYearBuild
     Friend WithEvents lblCountPD As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel10 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel11 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripStatusLabel14 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents lblChargeDesc As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel12 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents lblTotAmount As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents lblTotApp As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
 End Class

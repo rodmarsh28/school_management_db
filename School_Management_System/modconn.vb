@@ -16,6 +16,8 @@ Module modconn
     Public perform As String
     Public payrollMode As String
     Public payrollType As String
+    Public successClicked As Boolean
+
 
     Public Sub ConnectDatabase()
         'strConnString = "Persist Security Info=False;Integrated Security=true;Initial Catalog=DBMATMONITORINGDBS;server=localhost"
@@ -158,4 +160,13 @@ Module modconn
             Case Else : GetDigit = ""
         End Select
     End Function
+    Public Sub removeExistingData(ByVal srcRow As DataGridView, ByVal trgtRow As DataGridView, ByVal srcCell As Integer, ByVal trgtCell As Integer)
+        For Each row As DataGridViewRow In srcRow.Rows
+            For Each rows As DataGridViewRow In trgtRow.Rows
+                If row.Cells(srcCell).Value = rows.Cells(trgtCell).Value Then
+                    trgtRow.Rows.Remove(rows)
+                End If
+            Next
+        Next
+    End Sub
 End Module

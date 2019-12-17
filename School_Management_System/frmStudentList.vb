@@ -1,16 +1,15 @@
 ﻿Imports System.IO
 
 Public Class frmStudentList
-
+    Public successClicked As Boolean
     Sub get_student_list()
         Try
             Dim sc As New school_class
             sc.command = 0
-            sc.searchValue = txtSearch.Text
-            sc.get_student_data()
+            sc.get_student_data(txtSearch.Text)
             dgv.Rows.Clear()
             For Each row As DataRow In sc.dtable.Rows
-                dgv.Rows.Add(row(0), row(2), row(3), row(4), row(5), row(6), row(7))
+                dgv.Rows.Add(row(0), row(2), row(3), row(4), row(5), row(6), row("status"))
             Next
             lblCount.Text = dgv.Rows.Count.ToString("n0")
         Catch ex As Exception
@@ -33,8 +32,7 @@ Public Class frmStudentList
         Try
             Dim sc As New school_class
             sc.command = 0
-            sc.searchValue = dgv.CurrentRow.Cells(0).Value
-            sc.get_student_data()
+            sc.get_student_data(dgv.CurrentRow.Cells(0).Value)
             For Each row As DataRow In sc.dtable.Rows
                 Dim imageData As Byte() = DirectCast(row(1), Byte())
                 frmStudentInformation.txtID.Text = row(0)
@@ -71,5 +69,16 @@ Public Class frmStudentList
     End Sub
     Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
         get_student_data_toUpdate()
+    End Sub
+
+    Private Sub dgv_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv.CellContentClick
+
+    End Sub
+
+    Private Sub dgv_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        If dgv.RowCount > 0 Then
+            successClicked = True
+            Me.Close()
+        End If
     End Sub
 End Class

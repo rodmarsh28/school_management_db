@@ -27,6 +27,7 @@ Partial Class frmMain
         Me.SetupNewSchoolToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnrollStudentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MyAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SwitchSchoolYearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,6 +45,7 @@ Partial Class frmMain
         Me.TeacherListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StudentListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectionListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SchoolYearListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetupToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChargesDiscountsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PaymentDueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,8 +63,7 @@ Partial Class frmMain
         Me.lblUSERID = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblUsername = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.SchoolYearListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SwitchSchoolYearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddEditSchoolChargesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -100,6 +101,12 @@ Partial Class frmMain
         Me.MyAccountToolStripMenuItem.Name = "MyAccountToolStripMenuItem"
         Me.MyAccountToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
         Me.MyAccountToolStripMenuItem.Text = "My Account"
+        '
+        'SwitchSchoolYearToolStripMenuItem
+        '
+        Me.SwitchSchoolYearToolStripMenuItem.Name = "SwitchSchoolYearToolStripMenuItem"
+        Me.SwitchSchoolYearToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
+        Me.SwitchSchoolYearToolStripMenuItem.Text = "Switch School Year"
         '
         'LogoutToolStripMenuItem
         '
@@ -149,7 +156,7 @@ Partial Class frmMain
         '
         Me.CashierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrepareStatementOfAccountToolStripMenuItem, Me.ReceivePaymentToolStripMenuItem})
         Me.CashierToolStripMenuItem.Name = "CashierToolStripMenuItem"
-        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
+        Me.CashierToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CashierToolStripMenuItem.Text = "Cashier"
         '
         'PrepareStatementOfAccountToolStripMenuItem
@@ -168,7 +175,7 @@ Partial Class frmMain
         '
         Me.RegistrarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrepareStudentExaminationPermitToolStripMenuItem, Me.PrepareSummaryOfStudentsAllowedToExamToolStripMenuItem})
         Me.RegistrarToolStripMenuItem.Name = "RegistrarToolStripMenuItem"
-        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
+        Me.RegistrarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.RegistrarToolStripMenuItem.Text = "Registrar"
         '
         'PrepareStudentExaminationPermitToolStripMenuItem
@@ -193,24 +200,30 @@ Partial Class frmMain
         'TeacherListToolStripMenuItem
         '
         Me.TeacherListToolStripMenuItem.Name = "TeacherListToolStripMenuItem"
-        Me.TeacherListToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TeacherListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.TeacherListToolStripMenuItem.Text = "Teacher list"
         '
         'StudentListToolStripMenuItem
         '
         Me.StudentListToolStripMenuItem.Name = "StudentListToolStripMenuItem"
-        Me.StudentListToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StudentListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.StudentListToolStripMenuItem.Text = "Student list"
         '
         'SectionListToolStripMenuItem
         '
         Me.SectionListToolStripMenuItem.Name = "SectionListToolStripMenuItem"
-        Me.SectionListToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SectionListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.SectionListToolStripMenuItem.Text = "Section list"
+        '
+        'SchoolYearListToolStripMenuItem
+        '
+        Me.SchoolYearListToolStripMenuItem.Name = "SchoolYearListToolStripMenuItem"
+        Me.SchoolYearListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.SchoolYearListToolStripMenuItem.Text = "School Year list"
         '
         'SetupToolStripMenuItem1
         '
-        Me.SetupToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChargesDiscountsToolStripMenuItem, Me.PaymentDueToolStripMenuItem})
+        Me.SetupToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PaymentDueToolStripMenuItem, Me.ChargesDiscountsToolStripMenuItem, Me.AddEditSchoolChargesToolStripMenuItem})
         Me.SetupToolStripMenuItem1.Name = "SetupToolStripMenuItem1"
         Me.SetupToolStripMenuItem1.Size = New System.Drawing.Size(49, 20)
         Me.SetupToolStripMenuItem1.Text = "Setup"
@@ -218,14 +231,14 @@ Partial Class frmMain
         'ChargesDiscountsToolStripMenuItem
         '
         Me.ChargesDiscountsToolStripMenuItem.Name = "ChargesDiscountsToolStripMenuItem"
-        Me.ChargesDiscountsToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
-        Me.ChargesDiscountsToolStripMenuItem.Text = "Add Charges and Discounts"
+        Me.ChargesDiscountsToolStripMenuItem.Size = New System.Drawing.Size(299, 22)
+        Me.ChargesDiscountsToolStripMenuItem.Text = "Build / Setup School Year Charges and Due"
         '
         'PaymentDueToolStripMenuItem
         '
         Me.PaymentDueToolStripMenuItem.Name = "PaymentDueToolStripMenuItem"
-        Me.PaymentDueToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
-        Me.PaymentDueToolStripMenuItem.Text = "Payment Due"
+        Me.PaymentDueToolStripMenuItem.Size = New System.Drawing.Size(299, 22)
+        Me.PaymentDueToolStripMenuItem.Text = "Setup Students Section"
         '
         'ReportsToolStripMenuItem
         '
@@ -316,17 +329,11 @@ Partial Class frmMain
         Me.lblUsername.Size = New System.Drawing.Size(10, 17)
         Me.lblUsername.Text = " "
         '
-        'SchoolYearListToolStripMenuItem
+        'AddEditSchoolChargesToolStripMenuItem
         '
-        Me.SchoolYearListToolStripMenuItem.Name = "SchoolYearListToolStripMenuItem"
-        Me.SchoolYearListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.SchoolYearListToolStripMenuItem.Text = "School Year list"
-        '
-        'SwitchSchoolYearToolStripMenuItem
-        '
-        Me.SwitchSchoolYearToolStripMenuItem.Name = "SwitchSchoolYearToolStripMenuItem"
-        Me.SwitchSchoolYearToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
-        Me.SwitchSchoolYearToolStripMenuItem.Text = "Switch School Year"
+        Me.AddEditSchoolChargesToolStripMenuItem.Name = "AddEditSchoolChargesToolStripMenuItem"
+        Me.AddEditSchoolChargesToolStripMenuItem.Size = New System.Drawing.Size(299, 22)
+        Me.AddEditSchoolChargesToolStripMenuItem.Text = "Add / Edit School Charges"
         '
         'frmMain
         '
@@ -390,5 +397,6 @@ Partial Class frmMain
     Friend WithEvents lblSy As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents SchoolYearListToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SwitchSchoolYearToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddEditSchoolChargesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
