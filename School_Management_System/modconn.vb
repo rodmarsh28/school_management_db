@@ -4,6 +4,11 @@ Imports System.Data.SqlClient
 Imports System.Data.OleDb
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
+Imports System.Data.Linq
+Imports System.Linq
+Imports System.Configuration
+Imports System.ComponentModel
+
 Module modconn
     Public strSQL As String
     Public OleDBC As New SqlCommand
@@ -19,7 +24,7 @@ Module modconn
     Public successClicked As Boolean
 
 
-    Public Sub ConnectDatabase()
+    Public Function ConnectDatabase()
         'strConnString = "Persist Security Info=False;Integrated Security=true;Initial Catalog=DBMATMONITORINGDBS;server=localhost"
         strConnString = "Data Source=" & My.Settings.serverDB & ";" & _
                         "Initial Catalog=" & My.Settings.nameDB & ";" & _
@@ -27,7 +32,17 @@ Module modconn
                         "Password=" & My.Settings.passDB
         conn.ConnectionString = strConnString
         conn.Open()
-    End Sub
+    End Function
+
+    'Public Sub ConnectDatabase()
+    '    'strConnString = "Persist Security Info=False;Integrated Security=true;Initial Catalog=DBMATMONITORINGDBS;server=localhost"
+    '    strConnString = "Data Source=" & My.Settings.serverDB & ";" & _
+    '                    "Initial Catalog=" & My.Settings.nameDB & ";" & _
+    '                    "User ID=" & My.Settings.userDB & ";" & _
+    '                    "Password=" & My.Settings.passDB
+    '    conn.ConnectionString = strConnString
+    '    conn.Open()
+    'End Sub
     Sub checkConn()
         If conn.State = ConnectionState.Open Then
             OleDBC.Dispose()

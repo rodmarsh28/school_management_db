@@ -113,6 +113,17 @@ Namespace My
                 Me("defaultPrinterName") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=school_mgm_db;Persist Security Info=True;Us"& _ 
+            "er ID=sa")>  _
+        Public ReadOnly Property school_mgm_dbConnectionString() As String
+            Get
+                Return CType(Me("school_mgm_dbConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

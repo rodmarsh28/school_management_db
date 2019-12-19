@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="school_mgm_db" Class="bindSourceDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=school_mgm_db;Persist Security Info=True;User ID=sa" SettingsObjectName="School_Management_System.My.MySettings" SettingsPropertyName="school_mgm_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblStudentInfo" Member="tblStudentInfos">
+    <Type Name="tblStudentInfo">
+      <Column Name="studentID" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pictureID" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MI" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="birthDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="birthPlace" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="maidenName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="maidenCN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="fatherName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="fatherCN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="emergencyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="emergencyCN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

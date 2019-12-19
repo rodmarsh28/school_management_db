@@ -64,6 +64,7 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -85,6 +86,11 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bindSourceDB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bindSourceDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="frmDatabaseSettings.Designer.vb">
       <DependentUpon>frmDatabaseSettings.vb</DependentUpon>
     </Compile>
@@ -204,11 +210,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="qry_class.vb" />
     <Compile Include="school_class.vb" />
     <Compile Include="system_class.vb" />
     <Compile Include="user_class.vb" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bindSourceDB.dbml.layout">
+      <DependentUpon>bindSourceDB.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="frmDatabaseSettings.resx">
       <DependentUpon>frmDatabaseSettings.vb</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +279,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bindSourceDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>bindSourceDB.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -278,6 +293,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

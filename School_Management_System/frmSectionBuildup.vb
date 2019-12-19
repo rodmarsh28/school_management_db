@@ -4,7 +4,6 @@
         Dim frm As New frmSectionList
         frm.ShowDialog()
         If successClicked = True Then
-
             successClicked = False
         End If
     End Sub
@@ -29,18 +28,14 @@
         Next
         dgvSec.ClearSelection()
     End Sub
-
-
     Private Sub frmSectionBuildup_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         get_section_list()
     End Sub
-
     Private Sub dgvSec_CellMouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgvSec.CellMouseClick
         If dgv.SelectedRows.Count > 0 Then
             get_student_list()
         End If
     End Sub
-
     Private Sub ToolStripStatusLabel2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripStatusLabel2.Click
         Dim frm As New frmSectionList
         frm.get_section_list()
@@ -51,7 +46,6 @@
             With frm.dgv.CurrentRow
                 dgvSec.Rows.Add(.Cells(0).Value, .Cells(1).Value, .Cells(2).Value, .Cells(3).Value, .Cells(4).Value)
             End With
-
             successClicked = False
         End If
     End Sub
@@ -66,10 +60,6 @@
         For Each row As DataGridViewRow In dgv.SelectedRows
             dgv.Rows.Remove(row)
         Next
-    End Sub
-
-    Private Sub dgvSec_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvSec.CellContentClick
-
     End Sub
 
     Private Sub dgvSec_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvSec.SelectionChanged

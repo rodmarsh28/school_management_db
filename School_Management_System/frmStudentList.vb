@@ -22,11 +22,12 @@ Public Class frmStudentList
     End Sub
 
     Private Sub txtSearch_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSearch.TextChanged
-        get_student_list()
+        dgv.DataSource = qry_class.getStudentList("")
+        'get_student_list()
     End Sub
 
     Private Sub frmStudentList_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        get_student_list()
+        'get_student_list()
     End Sub
     Sub get_student_data_toUpdate()
         Try
