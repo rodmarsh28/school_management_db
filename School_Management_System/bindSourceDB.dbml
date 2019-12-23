@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="school_mgm_db" Class="bindSourceDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=school_mgm_db;Persist Security Info=True;User ID=sa" SettingsObjectName="School_Management_System.My.MySettings" SettingsPropertyName="school_mgm_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=school_mgm_db;Persist Security Info=True;User ID=sa" SettingsObjectName="School_Management_System.My.MySettings" SettingsPropertyName="school_mgm_dbConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblStudentInfo" Member="tblStudentInfos">
     <Type Name="tblStudentInfo">
       <Column Name="studentID" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -18,6 +18,16 @@
       <Column Name="emergencyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="emergencyCN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSection" Member="tblSections">
+    <Type Name="tblSection">
+      <Column Name="sectionNo" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sectionName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sectionGrade" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="maxStudCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="syID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

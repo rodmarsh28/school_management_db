@@ -44,9 +44,19 @@ Partial Class frmSchoolYearBuild
         Me.ToolStripStatusLabel8 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel9 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.dgvCharges = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.StatusStrip3 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel14 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblChargeDesc = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel12 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblTotAmount = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblTotApp = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblCountPD = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel10 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel11 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -54,16 +64,6 @@ Partial Class frmSchoolYearBuild
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblTotApp = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel12 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblTotAmount = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel14 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblChargeDesc = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -295,6 +295,31 @@ Partial Class frmSchoolYearBuild
         Me.dgvCharges.Size = New System.Drawing.Size(852, 273)
         Me.dgvCharges.TabIndex = 4
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "No."
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Particulars"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 220
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Amount"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Due Applied"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.StatusStrip3)
@@ -317,11 +342,49 @@ Partial Class frmSchoolYearBuild
         Me.StatusStrip3.TabIndex = 6
         Me.StatusStrip3.Text = "StatusStrip3"
         '
+        'ToolStripStatusLabel14
+        '
+        Me.ToolStripStatusLabel14.Name = "ToolStripStatusLabel14"
+        Me.ToolStripStatusLabel14.Size = New System.Drawing.Size(108, 24)
+        Me.ToolStripStatusLabel14.Text = "Charge Description"
+        '
+        'lblChargeDesc
+        '
+        Me.lblChargeDesc.MergeIndex = 1
+        Me.lblChargeDesc.Name = "lblChargeDesc"
+        Me.lblChargeDesc.Size = New System.Drawing.Size(0, 24)
+        '
+        'ToolStripStatusLabel12
+        '
+        Me.ToolStripStatusLabel12.Name = "ToolStripStatusLabel12"
+        Me.ToolStripStatusLabel12.Size = New System.Drawing.Size(132, 24)
+        Me.ToolStripStatusLabel12.Text = "Total Amount Charges :"
+        '
+        'lblTotAmount
+        '
+        Me.lblTotAmount.MergeIndex = 1
+        Me.lblTotAmount.Name = "lblTotAmount"
+        Me.lblTotAmount.Size = New System.Drawing.Size(13, 24)
+        Me.lblTotAmount.Text = "0"
+        '
         'ToolStripStatusLabel4
         '
         Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
         Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(103, 24)
         Me.ToolStripStatusLabel4.Text = "Total Apllied Due :"
+        '
+        'lblTotApp
+        '
+        Me.lblTotApp.MergeIndex = 1
+        Me.lblTotApp.Name = "lblTotApp"
+        Me.lblTotApp.Size = New System.Drawing.Size(13, 24)
+        Me.lblTotApp.Text = "0"
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(76, 24)
+        Me.ToolStripStatusLabel3.Text = "No. Count's :"
         '
         'lblCountPD
         '
@@ -391,69 +454,6 @@ Partial Class frmSchoolYearBuild
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
         Me.DataGridViewTextBoxColumn6.Width = 140
-        '
-        'ToolStripStatusLabel3
-        '
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(76, 24)
-        Me.ToolStripStatusLabel3.Text = "No. Count's :"
-        '
-        'lblTotApp
-        '
-        Me.lblTotApp.MergeIndex = 1
-        Me.lblTotApp.Name = "lblTotApp"
-        Me.lblTotApp.Size = New System.Drawing.Size(13, 24)
-        Me.lblTotApp.Text = "0"
-        '
-        'ToolStripStatusLabel12
-        '
-        Me.ToolStripStatusLabel12.Name = "ToolStripStatusLabel12"
-        Me.ToolStripStatusLabel12.Size = New System.Drawing.Size(132, 24)
-        Me.ToolStripStatusLabel12.Text = "Total Amount Charges :"
-        '
-        'lblTotAmount
-        '
-        Me.lblTotAmount.MergeIndex = 1
-        Me.lblTotAmount.Name = "lblTotAmount"
-        Me.lblTotAmount.Size = New System.Drawing.Size(13, 24)
-        Me.lblTotAmount.Text = "0"
-        '
-        'ToolStripStatusLabel14
-        '
-        Me.ToolStripStatusLabel14.Name = "ToolStripStatusLabel14"
-        Me.ToolStripStatusLabel14.Size = New System.Drawing.Size(108, 24)
-        Me.ToolStripStatusLabel14.Text = "Charge Description"
-        '
-        'lblChargeDesc
-        '
-        Me.lblChargeDesc.MergeIndex = 1
-        Me.lblChargeDesc.Name = "lblChargeDesc"
-        Me.lblChargeDesc.Size = New System.Drawing.Size(0, 24)
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "No."
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Particulars"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 220
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Due Applied"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
         '
         'frmSchoolYearBuild
         '

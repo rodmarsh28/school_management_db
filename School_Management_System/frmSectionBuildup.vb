@@ -44,7 +44,7 @@
         If successClicked = True Then
             dgv.Rows.Clear()
             With frm.dgv.CurrentRow
-                dgvSec.Rows.Add(.Cells(0).Value, .Cells(1).Value, .Cells(2).Value, .Cells(3).Value, .Cells(4).Value)
+                dgvSec.Rows.Add(.Cells(0).Value, .Cells(1).Value, .Cells(2).Value, .Cell / s(3).Value, .Cells(4).Value)
             End With
             successClicked = False
         End If

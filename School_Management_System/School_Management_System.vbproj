@@ -91,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bindSourceDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="bindSourceDB.vb">
+      <DependentUpon>bindSourceDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="frmDatabaseSettings.Designer.vb">
       <DependentUpon>frmDatabaseSettings.vb</DependentUpon>
     </Compile>
@@ -213,6 +216,7 @@
     <Compile Include="qry_class.vb" />
     <Compile Include="school_class.vb" />
     <Compile Include="system_class.vb" />
+    <Compile Include="tempQry_class.vb" />
     <Compile Include="user_class.vb" />
   </ItemGroup>
   <ItemGroup>

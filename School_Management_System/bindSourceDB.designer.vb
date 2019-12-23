@@ -37,10 +37,16 @@ Partial Public Class bindSourceDBDataContext
     End Sub
   Partial Private Sub DeletetblStudentInfo(instance As tblStudentInfo)
     End Sub
+  Partial Private Sub InserttblSection(instance As tblSection)
+    End Sub
+  Partial Private Sub UpdatetblSection(instance As tblSection)
+    End Sub
+  Partial Private Sub DeletetblSection(instance As tblSection)
+    End Sub
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.School_Management_System.My.MySettings.Default.school_mgm_dbConnectionString, mappingSource)
+		MyBase.New(Global.School_Management_System.My.MySettings.Default.school_mgm_dbConnectionString1, mappingSource)
 		OnCreated
 	End Sub
 	
@@ -67,6 +73,12 @@ Partial Public Class bindSourceDBDataContext
 	Public ReadOnly Property tblStudentInfos() As System.Data.Linq.Table(Of tblStudentInfo)
 		Get
 			Return Me.GetTable(Of tblStudentInfo)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblSections() As System.Data.Linq.Table(Of tblSection)
+		Get
+			Return Me.GetTable(Of tblSection)
 		End Get
 	End Property
 End Class
@@ -439,6 +451,177 @@ Partial Public Class tblStudentInfo
 				Me._status = value
 				Me.SendPropertyChanged("status")
 				Me.OnstatusChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblSection")>  _
+Partial Public Class tblSection
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _sectionNo As String
+	
+	Private _sectionName As String
+	
+	Private _sectionGrade As String
+	
+	Private _maxStudCount As System.Nullable(Of Integer)
+	
+	Private _status As String
+	
+	Private _syID As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnsectionNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnsectionNoChanged()
+    End Sub
+    Partial Private Sub OnsectionNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnsectionNameChanged()
+    End Sub
+    Partial Private Sub OnsectionGradeChanging(value As String)
+    End Sub
+    Partial Private Sub OnsectionGradeChanged()
+    End Sub
+    Partial Private Sub OnmaxStudCountChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnmaxStudCountChanged()
+    End Sub
+    Partial Private Sub OnstatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnstatusChanged()
+    End Sub
+    Partial Private Sub OnsyIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnsyIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionNo", DbType:="VarChar(255) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property sectionNo() As String
+		Get
+			Return Me._sectionNo
+		End Get
+		Set
+			If (String.Equals(Me._sectionNo, value) = false) Then
+				Me.OnsectionNoChanging(value)
+				Me.SendPropertyChanging
+				Me._sectionNo = value
+				Me.SendPropertyChanged("sectionNo")
+				Me.OnsectionNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionName", DbType:="VarChar(255)")>  _
+	Public Property sectionName() As String
+		Get
+			Return Me._sectionName
+		End Get
+		Set
+			If (String.Equals(Me._sectionName, value) = false) Then
+				Me.OnsectionNameChanging(value)
+				Me.SendPropertyChanging
+				Me._sectionName = value
+				Me.SendPropertyChanged("sectionName")
+				Me.OnsectionNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionGrade", DbType:="VarChar(255)")>  _
+	Public Property sectionGrade() As String
+		Get
+			Return Me._sectionGrade
+		End Get
+		Set
+			If (String.Equals(Me._sectionGrade, value) = false) Then
+				Me.OnsectionGradeChanging(value)
+				Me.SendPropertyChanging
+				Me._sectionGrade = value
+				Me.SendPropertyChanged("sectionGrade")
+				Me.OnsectionGradeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_maxStudCount", DbType:="Int")>  _
+	Public Property maxStudCount() As System.Nullable(Of Integer)
+		Get
+			Return Me._maxStudCount
+		End Get
+		Set
+			If (Me._maxStudCount.Equals(value) = false) Then
+				Me.OnmaxStudCountChanging(value)
+				Me.SendPropertyChanging
+				Me._maxStudCount = value
+				Me.SendPropertyChanged("maxStudCount")
+				Me.OnmaxStudCountChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_status", DbType:="VarChar(255)")>  _
+	Public Property status() As String
+		Get
+			Return Me._status
+		End Get
+		Set
+			If (String.Equals(Me._status, value) = false) Then
+				Me.OnstatusChanging(value)
+				Me.SendPropertyChanging
+				Me._status = value
+				Me.SendPropertyChanged("status")
+				Me.OnstatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_syID", DbType:="VarChar(255)")>  _
+	Public Property syID() As String
+		Get
+			Return Me._syID
+		End Get
+		Set
+			If (String.Equals(Me._syID, value) = false) Then
+				Me.OnsyIDChanging(value)
+				Me.SendPropertyChanging
+				Me._syID = value
+				Me.SendPropertyChanged("syID")
+				Me.OnsyIDChanged
 			End If
 		End Set
 	End Property

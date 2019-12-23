@@ -22,13 +22,21 @@ Public Class frmStudentList
     End Sub
 
     Private Sub txtSearch_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSearch.TextChanged
-        dgv.DataSource = qry_class.getStudentList("")
-        'get_student_list()
+        get_student_data()
+    End Sub
+    Sub get_student_data()
+        dgv.Rows.Clear()
+        For Each lst In qry_class.getStudentList(txtSearch.Text)
+            With lst
+                dgv.Rows.Add(.studentID, .lastname, .firstname, .MI, .address, .gender, .status)
+            End With
+        Next
     End Sub
 
     Private Sub frmStudentList_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'get_student_list()
+        get_student_data()
     End Sub
+
     Sub get_student_data_toUpdate()
         Try
             Dim sc As New school_class

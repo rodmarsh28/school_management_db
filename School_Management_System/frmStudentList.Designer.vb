@@ -27,9 +27,6 @@ Partial Class frmStudentList
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblCount = New System.Windows.Forms.ToolStripStatusLabel()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,15 +35,19 @@ Partial Class frmStudentList
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblCount = New System.Windows.Forms.ToolStripStatusLabel()
         Me.GroupBox1.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnCancel
         '
+        Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCancel.Location = New System.Drawing.Point(178, 330)
+        Me.btnCancel.Location = New System.Drawing.Point(177, 378)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(86, 35)
         Me.btnCancel.TabIndex = 13
@@ -55,8 +56,9 @@ Partial Class frmStudentList
         '
         'btnSave
         '
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSave.Location = New System.Drawing.Point(4, 330)
+        Me.btnSave.Location = New System.Drawing.Point(3, 378)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 35)
         Me.btnSave.TabIndex = 12
@@ -65,8 +67,9 @@ Partial Class frmStudentList
         '
         'btnEdit
         '
+        Me.btnEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEdit.Location = New System.Drawing.Point(91, 330)
+        Me.btnEdit.Location = New System.Drawing.Point(90, 378)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(86, 35)
         Me.btnEdit.TabIndex = 14
@@ -89,31 +92,10 @@ Partial Class frmStudentList
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 20)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(866, 304)
+        Me.GroupBox1.Size = New System.Drawing.Size(866, 327)
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Student's Information"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lblCount})
-        Me.StatusStrip1.Location = New System.Drawing.Point(3, 279)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(860, 22)
-        Me.StatusStrip1.TabIndex = 4
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(76, 17)
-        Me.ToolStripStatusLabel1.Text = "No. Count's :"
-        '
-        'lblCount
-        '
-        Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(13, 17)
-        Me.lblCount.Text = "0"
         '
         'dgv
         '
@@ -175,12 +157,33 @@ Partial Class frmStudentList
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lblCount})
+        Me.StatusStrip1.Location = New System.Drawing.Point(3, 302)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(860, 22)
+        Me.StatusStrip1.TabIndex = 5
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(76, 17)
+        Me.ToolStripStatusLabel1.Text = "No. Count's :"
+        '
+        'lblCount
+        '
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(13, 17)
+        Me.lblCount.Text = "0"
+        '
         'frmStudentList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(866, 370)
+        Me.ClientSize = New System.Drawing.Size(866, 419)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnEdit)
@@ -192,9 +195,9 @@ Partial Class frmStudentList
         Me.Text = "Student's List"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -204,9 +207,6 @@ Partial Class frmStudentList
     Friend WithEvents btnEdit As System.Windows.Forms.Button
     Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents lblCount As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -215,4 +215,7 @@ Partial Class frmStudentList
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents lblCount As System.Windows.Forms.ToolStripStatusLabel
 End Class

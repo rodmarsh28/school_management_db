@@ -1,11 +1,8 @@
 ﻿Public Class qry_class
-    Dim db As bindSourceDBDataContext = New bindSourceDBDataContext
-    Public Shared Function getStudentList(ByVal searchValue As String) As tblStudentInfo
-        Dim db As New bindSourceDBDataContext
-        Dim studlist = (From a In db.GetTable(Of tblStudentInfo)()
-        Where (a.studentID.Contains(searchValue))
-               Select a).FirstOrDefault
+    Public Shared Function getStudentList(ByVal searchValue As String)
 
-        Return studlist
+        Dim db As New bindSourceDBDataContext("Data Source=localhost;Initial Catalog=school_mgm_db;Persist Security Info=True;User ID=sa; password=passwork")
+        Return From res In db.GetTable(Of tblStudentInfo)()
+               Where res.studentID.Contains(searchValue) Or res.lastname.Contains(searchValue) Or res.firstname.Contains(searchValue)
     End Function
 End Class
