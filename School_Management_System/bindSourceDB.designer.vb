@@ -81,6 +81,18 @@ Partial Public Class bindSourceDBDataContext
 			Return Me.GetTable(Of tblSection)
 		End Get
 	End Property
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.get_section_data")>  _
+	Public Function get_section_data(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Int")> ByVal command As System.Nullable(Of Integer), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(255)")> ByVal searchValue As String) As ISingleResult(Of get_section_dataResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), command, searchValue)
+		Return CType(result.ReturnValue,ISingleResult(Of get_section_dataResult))
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.get_enrolled_data")>  _
+	Public Function get_enrolled_data(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(255)")> ByVal command As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(255)")> ByVal syID As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(255)")> ByVal sectionNo As String) As ISingleResult(Of get_enrolled_dataResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), command, syID, sectionNo)
+		Return CType(result.ReturnValue,ISingleResult(Of get_enrolled_dataResult))
+	End Function
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblStudentInfo")>  _
@@ -643,4 +655,495 @@ Partial Public Class tblSection
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
 	End Sub
+End Class
+
+Partial Public Class get_section_dataResult
+	
+	Private _sectionNo As String
+	
+	Private _sectionName As String
+	
+	Private _sectionGrade As String
+	
+	Private _maxStudCount As System.Nullable(Of Integer)
+	
+	Private _Student_Count As System.Nullable(Of Integer)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionNo", DbType:="VarChar(255) NOT NULL", CanBeNull:=false)>  _
+	Public Property sectionNo() As String
+		Get
+			Return Me._sectionNo
+		End Get
+		Set
+			If (String.Equals(Me._sectionNo, value) = false) Then
+				Me._sectionNo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionName", DbType:="VarChar(255)")>  _
+	Public Property sectionName() As String
+		Get
+			Return Me._sectionName
+		End Get
+		Set
+			If (String.Equals(Me._sectionName, value) = false) Then
+				Me._sectionName = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionGrade", DbType:="VarChar(255)")>  _
+	Public Property sectionGrade() As String
+		Get
+			Return Me._sectionGrade
+		End Get
+		Set
+			If (String.Equals(Me._sectionGrade, value) = false) Then
+				Me._sectionGrade = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_maxStudCount", DbType:="Int")>  _
+	Public Property maxStudCount() As System.Nullable(Of Integer)
+		Get
+			Return Me._maxStudCount
+		End Get
+		Set
+			If (Me._maxStudCount.Equals(value) = false) Then
+				Me._maxStudCount = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Student_Count", DbType:="Int")>  _
+	Public Property Student_Count() As System.Nullable(Of Integer)
+		Get
+			Return Me._Student_Count
+		End Get
+		Set
+			If (Me._Student_Count.Equals(value) = false) Then
+				Me._Student_Count = value
+			End If
+		End Set
+	End Property
+End Class
+
+Partial Public Class get_enrolled_dataResult
+	
+	Private _ID As Integer
+	
+	Private _syID As String
+	
+	Private _sectionNo As String
+	
+	Private _studentID As String
+	
+	Private _remarks As String
+	
+	Private _status As String
+	
+	Private _sectionName As String
+	
+	Private _sectionGrade As String
+	
+	Private _maxStudCount As System.Nullable(Of Integer)
+	
+	Private _sec_status As String
+	
+	Private _pictureID As System.Data.Linq.Binary
+	
+	Private _lastname As String
+	
+	Private _firstname As String
+	
+	Private _MI As String
+	
+	Private _address As String
+	
+	Private _gender As String
+	
+	Private _birthDate As System.Nullable(Of Date)
+	
+	Private _birthPlace As String
+	
+	Private _maidenName As String
+	
+	Private _maidenCN As String
+	
+	Private _fatherName As String
+	
+	Private _fatherCN As String
+	
+	Private _emergencyName As String
+	
+	Private _emergencyCN As String
+	
+	Private _stud_status As String
+	
+	Private _yfrom As String
+	
+	Private _yto As String
+	
+	Private _principalName As String
+	
+	Private _sy_status As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", DbType:="Int NOT NULL")>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me._ID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_syID", DbType:="VarChar(255)")>  _
+	Public Property syID() As String
+		Get
+			Return Me._syID
+		End Get
+		Set
+			If (String.Equals(Me._syID, value) = false) Then
+				Me._syID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionNo", DbType:="VarChar(255)")>  _
+	Public Property sectionNo() As String
+		Get
+			Return Me._sectionNo
+		End Get
+		Set
+			If (String.Equals(Me._sectionNo, value) = false) Then
+				Me._sectionNo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_studentID", DbType:="VarChar(255)")>  _
+	Public Property studentID() As String
+		Get
+			Return Me._studentID
+		End Get
+		Set
+			If (String.Equals(Me._studentID, value) = false) Then
+				Me._studentID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_remarks", DbType:="VarChar(255)")>  _
+	Public Property remarks() As String
+		Get
+			Return Me._remarks
+		End Get
+		Set
+			If (String.Equals(Me._remarks, value) = false) Then
+				Me._remarks = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_status", DbType:="VarChar(255)")>  _
+	Public Property status() As String
+		Get
+			Return Me._status
+		End Get
+		Set
+			If (String.Equals(Me._status, value) = false) Then
+				Me._status = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionName", DbType:="VarChar(255)")>  _
+	Public Property sectionName() As String
+		Get
+			Return Me._sectionName
+		End Get
+		Set
+			If (String.Equals(Me._sectionName, value) = false) Then
+				Me._sectionName = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sectionGrade", DbType:="VarChar(255)")>  _
+	Public Property sectionGrade() As String
+		Get
+			Return Me._sectionGrade
+		End Get
+		Set
+			If (String.Equals(Me._sectionGrade, value) = false) Then
+				Me._sectionGrade = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_maxStudCount", DbType:="Int")>  _
+	Public Property maxStudCount() As System.Nullable(Of Integer)
+		Get
+			Return Me._maxStudCount
+		End Get
+		Set
+			If (Me._maxStudCount.Equals(value) = false) Then
+				Me._maxStudCount = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sec_status", DbType:="VarChar(255)")>  _
+	Public Property sec_status() As String
+		Get
+			Return Me._sec_status
+		End Get
+		Set
+			If (String.Equals(Me._sec_status, value) = false) Then
+				Me._sec_status = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_pictureID", DbType:="VarBinary(MAX)")>  _
+	Public Property pictureID() As System.Data.Linq.Binary
+		Get
+			Return Me._pictureID
+		End Get
+		Set
+			If (Object.Equals(Me._pictureID, value) = false) Then
+				Me._pictureID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_lastname", DbType:="VarChar(255)")>  _
+	Public Property lastname() As String
+		Get
+			Return Me._lastname
+		End Get
+		Set
+			If (String.Equals(Me._lastname, value) = false) Then
+				Me._lastname = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_firstname", DbType:="VarChar(255)")>  _
+	Public Property firstname() As String
+		Get
+			Return Me._firstname
+		End Get
+		Set
+			If (String.Equals(Me._firstname, value) = false) Then
+				Me._firstname = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MI", DbType:="VarChar(255)")>  _
+	Public Property MI() As String
+		Get
+			Return Me._MI
+		End Get
+		Set
+			If (String.Equals(Me._MI, value) = false) Then
+				Me._MI = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_address", DbType:="VarChar(255)")>  _
+	Public Property address() As String
+		Get
+			Return Me._address
+		End Get
+		Set
+			If (String.Equals(Me._address, value) = false) Then
+				Me._address = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_gender", DbType:="VarChar(255)")>  _
+	Public Property gender() As String
+		Get
+			Return Me._gender
+		End Get
+		Set
+			If (String.Equals(Me._gender, value) = false) Then
+				Me._gender = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_birthDate", DbType:="DateTime2")>  _
+	Public Property birthDate() As System.Nullable(Of Date)
+		Get
+			Return Me._birthDate
+		End Get
+		Set
+			If (Me._birthDate.Equals(value) = false) Then
+				Me._birthDate = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_birthPlace", DbType:="VarChar(255)")>  _
+	Public Property birthPlace() As String
+		Get
+			Return Me._birthPlace
+		End Get
+		Set
+			If (String.Equals(Me._birthPlace, value) = false) Then
+				Me._birthPlace = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_maidenName", DbType:="VarChar(255)")>  _
+	Public Property maidenName() As String
+		Get
+			Return Me._maidenName
+		End Get
+		Set
+			If (String.Equals(Me._maidenName, value) = false) Then
+				Me._maidenName = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_maidenCN", DbType:="VarChar(255)")>  _
+	Public Property maidenCN() As String
+		Get
+			Return Me._maidenCN
+		End Get
+		Set
+			If (String.Equals(Me._maidenCN, value) = false) Then
+				Me._maidenCN = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_fatherName", DbType:="VarChar(255)")>  _
+	Public Property fatherName() As String
+		Get
+			Return Me._fatherName
+		End Get
+		Set
+			If (String.Equals(Me._fatherName, value) = false) Then
+				Me._fatherName = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_fatherCN", DbType:="VarChar(255)")>  _
+	Public Property fatherCN() As String
+		Get
+			Return Me._fatherCN
+		End Get
+		Set
+			If (String.Equals(Me._fatherCN, value) = false) Then
+				Me._fatherCN = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_emergencyName", DbType:="VarChar(255)")>  _
+	Public Property emergencyName() As String
+		Get
+			Return Me._emergencyName
+		End Get
+		Set
+			If (String.Equals(Me._emergencyName, value) = false) Then
+				Me._emergencyName = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_emergencyCN", DbType:="VarChar(255)")>  _
+	Public Property emergencyCN() As String
+		Get
+			Return Me._emergencyCN
+		End Get
+		Set
+			If (String.Equals(Me._emergencyCN, value) = false) Then
+				Me._emergencyCN = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_stud_status", DbType:="VarChar(255)")>  _
+	Public Property stud_status() As String
+		Get
+			Return Me._stud_status
+		End Get
+		Set
+			If (String.Equals(Me._stud_status, value) = false) Then
+				Me._stud_status = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_yfrom", DbType:="VarChar(255)")>  _
+	Public Property yfrom() As String
+		Get
+			Return Me._yfrom
+		End Get
+		Set
+			If (String.Equals(Me._yfrom, value) = false) Then
+				Me._yfrom = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_yto", DbType:="VarChar(255)")>  _
+	Public Property yto() As String
+		Get
+			Return Me._yto
+		End Get
+		Set
+			If (String.Equals(Me._yto, value) = false) Then
+				Me._yto = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_principalName", DbType:="VarChar(255)")>  _
+	Public Property principalName() As String
+		Get
+			Return Me._principalName
+		End Get
+		Set
+			If (String.Equals(Me._principalName, value) = false) Then
+				Me._principalName = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sy_status", DbType:="VarChar(255)")>  _
+	Public Property sy_status() As String
+		Get
+			Return Me._sy_status
+		End Get
+		Set
+			If (String.Equals(Me._sy_status, value) = false) Then
+				Me._sy_status = value
+			End If
+		End Set
+	End Property
 End Class

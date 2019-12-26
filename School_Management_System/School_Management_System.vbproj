@@ -216,7 +216,6 @@
     <Compile Include="qry_class.vb" />
     <Compile Include="school_class.vb" />
     <Compile Include="system_class.vb" />
-    <Compile Include="tempQry_class.vb" />
     <Compile Include="user_class.vb" />
   </ItemGroup>
   <ItemGroup>

@@ -17,19 +17,26 @@
             dgv.Rows.Add(sc.dtable("studentID"), sc.dtable("lastname"), sc.dtable("firstname"), sc.dtable("MI"), sc.dtable("gender"), sc.dtable("address"))
         End If
     End Sub
-    Sub get_section_list()
-        Dim sc As New school_class
-        sc.command = 0
-        sc.searchValue = ""
-        sc.get_section_data()
+    'Sub get_section_list()
+    '    Dim sc As New school_class
+    '    sc.command = 0
+    '    sc.searchValue = ""
+    '    sc.get_section_data()
+    '    dgvSec.Rows.Clear()
+    '    For Each row As DataRow In sc.dtable.Rows
+    '        dgvSec.Rows.Add(row(0), row(1), row(2), row(3), row(4))
+    '    Next
+    '    dgvSec.ClearSelection()
+    'End Sub
+    Sub get_section_enrolled()
         dgvSec.Rows.Clear()
-        For Each row As DataRow In sc.dtable.Rows
-            dgvSec.Rows.Add(row(0), row(1), row(2), row(3), row(4))
+        For Each lst In qry_class.getEnrolledData("Section", frmMain.lblSy.Text, "")
+            With lst
+                dgvSec.Rows.Add(.sectionNo, .sectionName, .sectionGraDE, .maxStudCount, .Student_Count)
+            End With
         Next
-        dgvSec.ClearSelection()
     End Sub
     Private Sub frmSectionBuildup_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        get_section_list()
     End Sub
     Private Sub dgvSec_CellMouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgvSec.CellMouseClick
         If dgv.SelectedRows.Count > 0 Then
@@ -44,7 +51,7 @@
         If successClicked = True Then
             dgv.Rows.Clear()
             With frm.dgv.CurrentRow
-                dgvSec.Rows.Add(.Cells(0).Value, .Cells(1).Value, .Cells(2).Value, .Cell / s(3).Value, .Cells(4).Value)
+                dgvSec.Rows.Add(.Cells(0).Value, .Cells(1).Value, .Cells(2).Value, .Cells(3).Value, .Cells(4).Value)
             End With
             successClicked = False
         End If

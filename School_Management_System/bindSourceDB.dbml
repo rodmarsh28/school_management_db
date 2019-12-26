@@ -30,4 +30,51 @@
       <Column Name="syID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
+  <Function Name="dbo.get_section_data" Method="get_section_data">
+    <Parameter Name="command" Type="System.Int32" DbType="Int" />
+    <Parameter Name="searchValue" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="get_section_dataResult">
+      <Column Name="sectionNo" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="sectionName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sectionGrade" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="maxStudCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Student_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.get_enrolled_data" Method="get_enrolled_data">
+    <Parameter Name="command" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="syID" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="sectionNo" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="get_enrolled_dataResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="syID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sectionNo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="studentID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sectionName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sectionGrade" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="maxStudCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sec_status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="pictureID" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MI" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="birthDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="birthPlace" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="maidenName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="maidenCN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="fatherName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="fatherCN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="emergencyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="emergencyCN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="stud_status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="yfrom" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="yto" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="principalName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sy_status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

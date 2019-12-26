@@ -33,13 +33,13 @@ Module modconn
         conn.ConnectionString = strConnString
         conn.Open()
     End Sub
-    Public Sub ContextDataConn()
-        strConnString = "Data Source=" & My.Settings.serverDB & ";" & _
+    Public Function dcString() As String
+        Dim x As String = "Data Source=" & My.Settings.serverDB & ";" & _
                        "Initial Catalog=" & My.Settings.nameDB & ";" & _
                        "User ID=" & My.Settings.userDB & ";" & _
                        "Password=" & My.Settings.passDB
-
-    End Sub
+        Return x
+    End Function
 
     'Public Sub ConnectDatabase()
     '    'strConnString = "Persist Security Info=False;Integrated Security=true;Initial Catalog=DBMATMONITORINGDBS;server=localhost"

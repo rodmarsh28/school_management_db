@@ -12,7 +12,7 @@
  Target Server Version : 10001600
  File Encoding         : 65001
 
- Date: 17/12/2019 16:34:55
+ Date: 26/12/2019 17:03:27
 */
 
 
@@ -66,7 +66,7 @@ GO
 
 CREATE TABLE [dbo].[tblEnrolledStudent] (
   [ID] int  NOT NULL,
-  [syID] int  NULL,
+  [syID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
   [sectionNo] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
   [studentID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
   [remarks] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
@@ -247,91 +247,6 @@ GO
 -- Records of tblUser
 -- ----------------------------
 INSERT INTO [dbo].[tblUser] VALUES (N'USR-00001', N'admin', N'1234', N'Admin', N'Active')
-GO
-
-
--- ----------------------------
--- Table structure for TMPtblCharges
--- ----------------------------
-IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[TMPtblCharges]') AND type IN ('U'))
-	DROP TABLE [dbo].[TMPtblCharges]
-GO
-
-CREATE TABLE [dbo].[TMPtblCharges] (
-  [chargeID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NOT NULL,
-  [syID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [sectionNo] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [particulars] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [amount] decimal(20,2)  NULL,
-  [termsID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [accNo] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL
-)
-GO
-
-ALTER TABLE [dbo].[TMPtblCharges] SET (LOCK_ESCALATION = TABLE)
-GO
-
-
--- ----------------------------
--- Table structure for TMPtblDue
--- ----------------------------
-IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[TMPtblDue]') AND type IN ('U'))
-	DROP TABLE [dbo].[TMPtblDue]
-GO
-
-CREATE TABLE [dbo].[TMPtblDue] (
-  [dueID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NOT NULL,
-  [chargeID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [amount] decimal(20,2)  NULL,
-  [dueDate] datetime2(7)  NULL
-)
-GO
-
-ALTER TABLE [dbo].[TMPtblDue] SET (LOCK_ESCALATION = TABLE)
-GO
-
-
--- ----------------------------
--- Table structure for TMPtblEnrolledStudent
--- ----------------------------
-IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[TMPtblEnrolledStudent]') AND type IN ('U'))
-	DROP TABLE [dbo].[TMPtblEnrolledStudent]
-GO
-
-CREATE TABLE [dbo].[TMPtblEnrolledStudent] (
-  [ID] int  NOT NULL,
-  [syID] int  NULL,
-  [sectionNo] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [studentID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [remarks] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [status] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL
-)
-GO
-
-ALTER TABLE [dbo].[TMPtblEnrolledStudent] SET (LOCK_ESCALATION = TABLE)
-GO
-
-
--- ----------------------------
--- Table structure for TMPtblSchedule
--- ----------------------------
-IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[TMPtblSchedule]') AND type IN ('U'))
-	DROP TABLE [dbo].[TMPtblSchedule]
-GO
-
-CREATE TABLE [dbo].[TMPtblSchedule] (
-  [schedID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NOT NULL,
-  [syID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [sectionNo] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [hours] datetime2(7)  NULL,
-  [dateFrom] datetime2(7)  NULL,
-  [dateTo] datetime2(7)  NULL,
-  [description] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL,
-  [teacherID] varchar(255) COLLATE SQL_Latin1_General_CP1_CI_AS  NULL
-)
-GO
-
-ALTER TABLE [dbo].[TMPtblSchedule] SET (LOCK_ESCALATION = TABLE)
 GO
 
 
@@ -620,6 +535,78 @@ GO
 
 
 -- ----------------------------
+-- Procedure structure for get_enrolled_data
+-- ----------------------------
+IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[get_enrolled_data]') AND type IN ('P', 'PC', 'RF', 'X'))
+	DROP PROCEDURE[dbo].[get_enrolled_data]
+GO
+
+CREATE PROCEDURE [dbo].[get_enrolled_data]
+@command as varchar(255),
+@syID as varchar(255),
+@sectionNo as varchar(255)
+AS
+BEGIN
+if @command = 'Student' BEGIN
+SELECT
+dbo.tblEnrolledStudent.ID,
+dbo.tblEnrolledStudent.syID,
+dbo.tblEnrolledStudent.sectionNo,
+dbo.tblEnrolledStudent.studentID,
+dbo.tblEnrolledStudent.remarks,
+dbo.tblEnrolledStudent.status,
+dbo.tblSection.sectionName,
+dbo.tblSection.sectionGrade,
+dbo.tblSection.maxStudCount,
+dbo.tblSection.status as sec_status,
+dbo.tblStudentInfo.pictureID,
+dbo.tblStudentInfo.lastname,
+dbo.tblStudentInfo.firstname,
+dbo.tblStudentInfo.MI,
+dbo.tblStudentInfo.address,
+dbo.tblStudentInfo.gender,
+dbo.tblStudentInfo.birthDate,
+dbo.tblStudentInfo.birthPlace,
+dbo.tblStudentInfo.maidenName,
+dbo.tblStudentInfo.maidenCN,
+dbo.tblStudentInfo.fatherName,
+dbo.tblStudentInfo.fatherCN,
+dbo.tblStudentInfo.emergencyName,
+dbo.tblStudentInfo.emergencyCN,
+dbo.tblStudentInfo.status as stud_status,
+dbo.tblSchoolYear.yfrom,
+dbo.tblSchoolYear.yto,
+dbo.tblSchoolYear.principalName,
+dbo.tblSchoolYear.status as sy_status
+FROM
+dbo.tblEnrolledStudent
+INNER JOIN dbo.tblSection ON dbo.tblEnrolledStudent.sectionNo = dbo.tblSection.sectionNo
+INNER JOIN dbo.tblStudentInfo ON dbo.tblEnrolledStudent.studentID = dbo.tblStudentInfo.studentID
+INNER JOIN dbo.tblSchoolYear ON dbo.tblEnrolledStudent.syID = dbo.tblSchoolYear.syID
+where dbo.tblEnrolledStudent.syID = @syID and dbo.tblEnrolledStudent.sectionNo = @sectionNo
+end 
+else if @command = 'Section' BEGIN
+select distinct
+dbo.tblEnrolledStudent.sectionNo,
+dbo.tblSection.sectionName,
+dbo.tblSection.sectionGrade,
+dbo.tblSection.maxStudCount,
+count(tblEnrolledStudent.studentID) as Student_Count
+FROM
+dbo.tblEnrolledStudent
+INNER JOIN dbo.tblSection ON dbo.tblEnrolledStudent.sectionNo = dbo.tblSection.sectionNo and dbo.tblEnrolledStudent.syID = dbo.tblSection.syID
+where dbo.tblEnrolledStudent.syID = @syID 
+GROUP BY
+dbo.tblEnrolledStudent.sectionNo,
+dbo.tblSection.sectionName,
+dbo.tblSection.sectionGrade,
+dbo.tblSection.maxStudCount
+end
+END
+GO
+
+
+-- ----------------------------
 -- Primary Key structure for table tblCharges
 -- ----------------------------
 ALTER TABLE [dbo].[tblCharges] ADD CONSTRAINT [PK__tblCharg__F71EF993286302EC] PRIMARY KEY CLUSTERED ([chargeID])
@@ -686,33 +673,6 @@ GO
 -- Primary Key structure for table tblUser
 -- ----------------------------
 ALTER TABLE [dbo].[tblUser] ADD CONSTRAINT [PK__tblUser__CB9A1CDF023D5A04] PRIMARY KEY CLUSTERED ([userID])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
-ON [PRIMARY]
-GO
-
-
--- ----------------------------
--- Primary Key structure for table TMPtblCharges
--- ----------------------------
-ALTER TABLE [dbo].[TMPtblCharges] ADD CONSTRAINT [PK__tblCharg__F71EF993286302EC_copy1] PRIMARY KEY CLUSTERED ([chargeID])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
-ON [PRIMARY]
-GO
-
-
--- ----------------------------
--- Primary Key structure for table TMPtblDue
--- ----------------------------
-ALTER TABLE [dbo].[TMPtblDue] ADD CONSTRAINT [PK__tblDue__843C6A2D25869641_copy1] PRIMARY KEY CLUSTERED ([dueID])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
-ON [PRIMARY]
-GO
-
-
--- ----------------------------
--- Primary Key structure for table TMPtblEnrolledStudent
--- ----------------------------
-ALTER TABLE [dbo].[TMPtblEnrolledStudent] ADD CONSTRAINT [PK__tblEnrol__3214EC27108B795B_copy1] PRIMARY KEY CLUSTERED ([ID])
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
 ON [PRIMARY]
 GO
